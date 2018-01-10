@@ -16,12 +16,6 @@ public class UDPSender : MonoBehaviour
     {
         UDPSend();
 	}
-	
-	
-	void Update () 
-    {
-		
-	}
 
     void UDPSend()
     {
