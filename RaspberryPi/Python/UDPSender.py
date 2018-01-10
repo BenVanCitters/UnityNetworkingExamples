@@ -1,7 +1,7 @@
 import socket
 
-UDP_IP = "10.102.52.201"
-UDP_PORT = 5006
+UDP_IP = "10.102.52.122"
+UDP_PORT = 9999
 MESSAGE = "Bonjour, le monde!"
 
 print( "UDP target IP:", UDP_IP)
