@@ -18,8 +18,9 @@ logger.addHandler(logging.StreamHandler(sys.stdout))
 class TornadoPollingHandler(tornado.websocket.WebSocketHandler):
 
     def initialize(self, description):
-        logger.info("initi polling")
+        logger.info("Initializing TornadoPollingHandler")
         self.description = description
+        #setup a 1 second looping message to connected clients
         self.reporter = tornado.ioloop.PeriodicCallback(self.send_report, 1000)
 
     def check_origin(self, origin):
@@ -34,25 +35,16 @@ class TornadoPollingHandler(tornado.websocket.WebSocketHandler):
             self.reporter.stop()
         logger.info("Test service connection closed")
 
+    #send off json'ified dictionary
     def send_report(self):
         data = { 'description': self.description }
         message = json.dumps(data)
         self.write_message(message)
 
+    #pass back anything that is passed to us
     def on_message(self, message):
+        logger.info("Message Recieved: " + message + " sending back")
         self.write_message("You said: " + message)
-
-class TornadoServiceHandler(tornado.web.RequestHandler):
-    def initialize(self, random_value):
-        logger.info("initi TornadoServiceHandler")
-        self.random_value = random_value
-
-    def get(self):
-        message = json.dumps(self.get_data())
-        self.write(message)
-
-    def get_data(self):
-        return { 'random_value': self.random_value }
 
 
 def main():
@@ -65,8 +57,8 @@ def main():
     #setup the tornado app
 
     app = tornado.web.Application([
-        (r'/service', TornadoServiceHandler, { 'random_value': random.uniform(1.5, 1.9)}),
-        (r'/pollingservice', TornadoPollingHandler, { 'description': ""})
+        (r'/pollingservice_marx', TornadoPollingHandler, {'description': "A commodity is, in the first place, an object outside us, a thing that by its properties satisfies human wants of some sort or another. The nature of such wants, whether, for instance, they spring from the stomach or from fancy, makes no difference. Neither are we here concerned to know how the object satisfies these wants, whether directly as means of subsistence, or indirectly as means of production. -Marx"}),
+        (r'/pollingservice_darwin', TornadoPollingHandler, { 'description': "When we look to the individuals of the same variety or sub-variety of our older cultivated plants and animals, one of the first points which strikes us, is, that they generally differ much more from each other, than do the individuals of any one species or variety in a state of nature. - Darwin"})
     ])
 
     app.listen(args.port, address=args.interface)
