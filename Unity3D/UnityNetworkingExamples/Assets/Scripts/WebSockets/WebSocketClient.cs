@@ -16,6 +16,7 @@ public class WebSocketClient : MonoBehaviour
 	void Start () 
     {
         InitAndConnectWebSocket();
+        //test send message
         SendMessageToSocket("SENDERER");
 	}
 
