@@ -63,14 +63,10 @@ def main():
     args = parser.parse_args()
 
     #setup the tornado app
-    handler_args = {
-        'description': "",
-        'random_value': random.uniform(1.5, 1.9)
-    }
 
     app = tornado.web.Application([
-        (r'/service', TornadoServiceHandler, handler_args),
-        (r'/pollingservice', TornadoPollingHandler, handler_args)
+        (r'/service', TornadoServiceHandler, { 'random_value': random.uniform(1.5, 1.9)}),
+        (r'/pollingservice', TornadoPollingHandler, { 'description': ""})
     ])
 
     app.listen(args.port, address=args.interface)
