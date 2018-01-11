@@ -33,7 +33,7 @@ class TornadoPollingHandler(tornado.websocket.WebSocketHandler):
     def on_close(self):
         if self.reporter and self.reporter.is_running():
             self.reporter.stop()
-        logger.info("Test service connection closed")
+        logger.info("TornadoPollingHandler connection closed")
 
     #send off json'ified dictionary
     def send_report(self):
