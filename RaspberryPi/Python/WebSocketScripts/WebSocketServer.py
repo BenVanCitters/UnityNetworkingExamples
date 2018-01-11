@@ -39,6 +39,7 @@ class TornadoPollingHandler(tornado.websocket.WebSocketHandler):
     def send_report(self):
         data = { 'description': self.description }
         message = json.dumps(data)
+        logger.info("sending msg: " + message)
         self.write_message(message)
 
     #pass back anything that is passed to us
