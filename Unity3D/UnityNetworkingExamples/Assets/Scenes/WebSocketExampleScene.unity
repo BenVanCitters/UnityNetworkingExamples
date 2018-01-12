@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fab280876f34e3aad4c776d072345b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Port: 9999
+  ServiceName: service
 --- !u!4 &195598184
 Transform:
   m_ObjectHideFlags: 0
@@ -247,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &575719185
 MonoBehaviour:
   m_ObjectHideFlags: 0

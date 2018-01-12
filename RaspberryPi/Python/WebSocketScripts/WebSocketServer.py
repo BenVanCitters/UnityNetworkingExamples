@@ -56,7 +56,7 @@ def main():
     args = parser.parse_args()
 
     #setup the tornado app
-
+    logger.info("Starting Raspberry Pi Tornado Web Socket server - " + args.interface + " at port " + str(args.port) + "\n")
     app = tornado.web.Application([
         (r'/pollingservice_marx', TornadoPollingHandler, {'description': "A commodity is, in the first place, an object outside us, a thing that by its properties satisfies human wants of some sort or another. The nature of such wants, whether, for instance, they spring from the stomach or from fancy, makes no difference. Neither are we here concerned to know how the object satisfies these wants, whether directly as means of subsistence, or indirectly as means of production. -Marx"}),
         (r'/pollingservice_darwin', TornadoPollingHandler, { 'description': "When we look to the individuals of the same variety or sub-variety of our older cultivated plants and animals, one of the first points which strikes us, is, that they generally differ much more from each other, than do the individuals of any one species or variety in a state of nature. - Darwin"})
@@ -69,7 +69,7 @@ def main():
 
 if __name__ == '__main__':
     try:
-        logger.info("Starting Raspberry Pi Tornado Web Socket server\n")
+
         main()
     except KeyboardInterrupt as e:
         logger.info("\nRaspberry Pi Tornado Web Socket server interruptted")

@@ -38,13 +38,12 @@ public class WebSocketClient : MonoBehaviour
         Debug.Log("Starting websocket client...");
         MyWebSocket = new WebSocket(GetWebSocketString());
         MyWebSocket.EmitOnPing = true;
-
         MyWebSocket.OnError += WebSocketError;
-        MyWebSocket.OnMessage += WebSocketMessageRecieved;
+        MyWebSocket.OnMessage += WebSocketMessageReceived;
         MyWebSocket.OnOpen += WebSocketOpened;
         MyWebSocket.OnClose += WebSocketOnClose;
         MyWebSocket.Connect();
-        Debug.Log("...Done starting websocket client");
+        Debug.Log("...Done starting websocket client = " + GetWebSocketString());
     }
 
 
@@ -76,7 +75,7 @@ public class WebSocketClient : MonoBehaviour
     /// </summary>
     /// <param name="sender">Sender.</param>
     /// <param name="e">E.</param>
-    void WebSocketMessageRecieved(object sender, MessageEventArgs e)
+    void WebSocketMessageReceived(object sender, MessageEventArgs e)
     {
         if (e.IsPing)
         {
@@ -88,7 +87,7 @@ public class WebSocketClient : MonoBehaviour
 
     /// <summary>
     /// Callback that is run when the socket is opened
-    /// merely prints out the recieved params
+    /// merely prints out the received params
     /// </summary>
     /// <param name="sender">Sender.</param>
     /// <param name="e">E.</param>
