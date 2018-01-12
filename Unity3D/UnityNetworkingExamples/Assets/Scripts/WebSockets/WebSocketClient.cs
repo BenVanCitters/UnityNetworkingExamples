@@ -55,7 +55,7 @@ public class WebSocketClient : MonoBehaviour
     /// <param name="e">E.</param>
     void WebSocketOnClose(object sender, CloseEventArgs e)
     {
-        Debug.Log("WebSocket OnClose: " + e.Reason);
+        Debug.Log("WebSocketClient OnClose: " + e.Reason);
     }
 
 
@@ -66,7 +66,7 @@ public class WebSocketClient : MonoBehaviour
     /// <param name="e">E.</param>
     void WebSocketError(object sender, ErrorEventArgs e)
     {
-        Debug.LogError("WebSocket OnError: " + e.Message);
+        Debug.LogError("WebSocketClient OnError: " + e.Message);
     }
 
 
@@ -82,7 +82,7 @@ public class WebSocketClient : MonoBehaviour
         {
             Debug.Log("Ping!");
         }
-        Debug.Log("WebSocket OnMessage: " + e.Data);
+        Debug.Log("WebSocketClient OnMessage: " + e.Data);
     }
 
 
@@ -94,7 +94,7 @@ public class WebSocketClient : MonoBehaviour
     /// <param name="e">E.</param>
     void WebSocketOpened(object sender, System.EventArgs e)
     {
-        Debug.Log("WebSocket OnOpen: " + e.ToString());
+        Debug.Log("WebSocketClient OnOpen: " + e.ToString());
     }
 
 
@@ -106,7 +106,7 @@ public class WebSocketClient : MonoBehaviour
     {
         if (MyWebSocket != null &&  MyWebSocket.IsAlive)
         {
-            Debug.Log("WebSocket Sending msg:" +  message);
+            Debug.Log("WebSocketClient Sending msg:" +  message);
             MyWebSocket.Send(Encoding.ASCII.GetBytes(message));
         }
     }
@@ -118,7 +118,7 @@ public class WebSocketClient : MonoBehaviour
     /// </summary>
     private void OnDestroy()
     {
-        Debug.Log("Closing WebSocket: " + GetWebSocketString());
+        Debug.Log("Closing WebSocketClient: " + GetWebSocketString());
         MyWebSocket.Close();
     }
 }
