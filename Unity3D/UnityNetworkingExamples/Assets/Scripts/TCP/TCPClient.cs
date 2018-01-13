@@ -78,8 +78,6 @@ public class TCPClient : MonoBehaviour
         {
             Debug.Log(string.Format("SocketException: {0}", e));
         }
-
-        Debug.Log("\n Press Enter to continue...");
     }
 
     private void OnDestroy()
