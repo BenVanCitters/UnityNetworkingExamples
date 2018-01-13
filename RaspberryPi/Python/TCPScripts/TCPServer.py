@@ -22,7 +22,7 @@ class MyRequestHandlerClass(socketserver.BaseRequestHandler):
 def main():
     # handle passed in arguments
     parser = argparse.ArgumentParser(description='Raspberry Pi TCP Server')
-    parser.add_argument('-i', '--interface', dest='interface', default='10.102.52.122')
+    parser.add_argument('-i', '--ipaddress', dest='ipaddress', default='10.102.52.122')
     parser.add_argument('-p', '--port', dest='port', type=int, default=9999)
     args = parser.parse_args()
 
