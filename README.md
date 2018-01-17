@@ -3,6 +3,7 @@ Examples of various networking tech within unity3d to and from the outside.  The
 
 ## User Datagram Protocol (UDP)
 https://en.wikipedia.org/wiki/User_Datagram_Protocol
+
 To explore UDP with Unity and Python there is a unity scene and two script components:
  - Scenes/UDPExampleScene.unity
  - Scripts/UDP/UDPReceiver.cs
@@ -17,6 +18,7 @@ These scripts send only strings back and forth.
 
 ## Transmission Control Protocol
 https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+
 There are several components to explore TCP connectivity with in Unity, Processing, and Python.
  - UnityAssets/Scripts/MyTCPListener.cs
  - UnityAssets/Scripts/TCPClient.cs
@@ -30,6 +32,7 @@ There are several components to explore TCP connectivity with in Unity, Processi
 
 ## WebSockets
 https://en.wikipedia.org/wiki/WebSocket
+
 To explore WebSockets via Unity there are some scripts, a library, and a scene
 - Plugins/websocket-sharp/websocket-sharp.dll
 - Scenes/WebSocketExampleScene.unity
