@@ -1,5 +1,5 @@
 # UnityNetworkingExamples
-Examples of various networking tech within unity3d to and from the outside.  These scripts were created to make a networking lauchpad for other projects... simple sketches containing easily trasferable code snippets into larger more complex and complicated projects.  As these sketches evolve they will eventually come to inhabit an architecture, but as I am learning these technologies as I use them they won't have great shape at the start.
+Examples of various networking tech within unity3d to and from the outside.  These scripts were created to make a networking lauchpad for other projects... simple sketches containing easily transferable code snippets into larger, more complex, and complicated projects.  As these sketches evolve they will eventually come to inhabit an architecture, but as I am learning these technologies as I use them they won't have great shape at the start.
 
 ## User Datagram Protocol (UDP)
 https://en.wikipedia.org/wiki/User_Datagram_Protocol
