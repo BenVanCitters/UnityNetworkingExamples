@@ -1,6 +1,9 @@
 # UnityNetworkingExamples
 Examples of various networking tech within unity3d to and from the outside.  These scripts were created to make a networking lauchpad for other projects... simple sketches containing easily transferable code snippets into larger, more complex, and complicated projects.  As these sketches evolve they will eventually come to inhabit an architecture, but as I am learning these technologies as I use them they won't have great shape at the start.
 
+## Disclaimer
+Opening ports of your application or network to the outside world (ie, the internet; untrusted actors) is an inherently dangerous thing to do.  Security is neither easy nor trivial.  These examples do not include any security measures and are thereby not secure.  If you use these examples please acknowledge the risk of leaving unprotected ports open and use appropriate measures of confidentiality, integrity, and authenticity to prevent the loss, theft and damage that could be incurred otherwise.
+
 ## User Datagram Protocol (UDP)
 https://en.wikipedia.org/wiki/User_Datagram_Protocol
 
