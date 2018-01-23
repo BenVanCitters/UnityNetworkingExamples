@@ -19,7 +19,7 @@ Along with Two Python Scripts:
 When running the UDPExampleScene in the Unity project the UDPListener & UDPSender python scripts can be used as corrolary (and even on remote devices) to send and receive messages from an external source(s).
 These scripts send only strings back and forth.
 
-## Transmission Control Protocol
+## Transmission Control Protocol (TCP)
 https://en.wikipedia.org/wiki/Transmission_Control_Protocol
 
 There are several components to explore TCP connectivity with in Unity, Processing, and Python.
