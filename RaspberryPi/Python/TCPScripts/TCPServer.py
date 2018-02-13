@@ -26,10 +26,10 @@ def main():
     parser.add_argument('-p', '--port', dest='port', type=int, default=9999)
     args = parser.parse_args()
 
-    logger.info("Starting Raspberry Pi TCP Server - " + args.interface + " at port " + str(args.port) + "\n")
+    logger.info("Starting Raspberry Pi TCP Server - " + args.ipaddress + " at port " + str(args.port) + "\n")
 
 
-    server = socketserver.TCPServer((args.interface,args.port),MyRequestHandlerClass)
+    server = socketserver.TCPServer((args.ipaddress,args.port),MyRequestHandlerClass)
     server.serve_forever()
 
 if __name__ == '__main__':
